@@ -11,13 +11,13 @@ This document outlines the structure of the database application and explains ho
 Below is the directory structure for the project where the Tomcat 9.0 server will run directly from Eclipse IDE
 
 ```
-bookup/                    <-- Root directory of your Maven project
+gosjsu/                    <-- Root directory of your Maven project
 ├── pom.xml                <-- Maven configuration file
 ├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/
-│   │   │       └── bookie/
+│   │   │       └── gosjsu/
 │   │   │           ├── auth/               <-- Package for authentication and authorization
 │   │   │           │   ├── AccessControlUtil.java
 │   │   │           │   ├── IsAdmin.java
@@ -154,7 +154,7 @@ This command will:
 ## Running the Project on Tomcat
 
 ### Option 1: Manually Deploy the WAR File
-1. Locate the generated `.war` file in the `target/` directory (e.g., `bookup.war`).
+1. Locate the generated `.war` file in the `target/` directory (e.g., `gosjsu.war`).
 2. Copy the `.war` file to the `webapps/` folder of your Tomcat installation.
 3. Start the Tomcat server:
    ```bash
@@ -162,7 +162,7 @@ This command will:
    ```
 4. Access the application in your browser at:
    ```
-   http://localhost:8080/bookup
+   http://localhost:8080/gosjsu
    ```
 
 ---
@@ -185,7 +185,7 @@ mvn tomcat9:undeploy
 ## Accessing the Application
 Once deployed, access your application in a web browser at:
 ```
-http://localhost:8080/bookup
+http://localhost:8080/gosjsu
 ```
 
 ---
@@ -232,7 +232,7 @@ mvn package
 If you have SQL scripts in the `sql/` directory, you can run them manually in your MySQL database to set up the schema:
 
 ```bash
-mysql -u root -p < sql/bookup_user.sql
+mysql -u root -p < sql/<file_name>.sql
 ```
 
 ---
