@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class DBConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/gosjsu"; // Update with your database URL
-    private static final String USER = "yourUsername"; // Update with your database username
-    private static final String PASSWORD = "yourPassword"; // Update with your database password
+    private static final String USER = "root"; // Update with your database username
+    private static final String PASSWORD = "password"; // Update with your database password
 
     private static Connection connection;
 

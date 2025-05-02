@@ -89,20 +89,12 @@
             <!-- Embedded Tomcat for mvn tomcat7:run -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat9-maven-plugin</artifactId>
-                <version>2.3</version>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
                 <configuration>
-                    <contextPath>/GoSJSU</contextPath>
-                    <port>8080</port>
+                    <path>/GoSJSU</path>
+                    <port>8081</port>
                 </configuration>
-                <!-- <executions>
-                    <execution>
-                        <id>start-tomcat</id>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions> -->
             </plugin>
         </plugins>
     </build>
