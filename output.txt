@@ -1,0 +1,478 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.gosjsu:GoSJSU >--------------------------
+[INFO] Building GoSJSU 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ GoSJSU ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ GoSJSU ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 12 source files with javac [debug target 11] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] system modules path not set in conjunction with -source 11
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[8,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[12,35] cannot find symbol
+  symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[11,2] cannot find symbol
+  symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[15,27] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.auth.LoginServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[15,55] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.auth.LoginServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[15,92] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.auth.LoginServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DBConnection.java:[5,8] duplicate class: DBConnection
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/GradeService.java:[3,24] cannot access com.gosjsu.utils.DBConnection
+  bad source file: /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DBConnection.java
+    file does not contain class com.gosjsu.utils.DBConnection
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[4,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[5,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[8,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[16,37] cannot find symbol
+  symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[15,2] cannot find symbol
+  symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[20,26] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[20,54] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[20,91] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[32,27] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[32,55] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[32,92] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[42,34] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[42,62] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[42,99] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[46,31] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[46,59] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[46,96] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[50,30] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[50,58] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[70,30] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[70,58] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[4,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[5,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[6,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[7,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[8,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[9,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[10,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[11,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[14,36] cannot find symbol
+  symbol: class Filter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[17,22] cannot find symbol
+  symbol:   class FilterConfig
+  location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[17,56] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[22,26] cannot find symbol
+  symbol:   class ServletRequest
+  location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[22,50] cannot find symbol
+  symbol:   class ServletResponse
+  location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[22,76] cannot find symbol
+  symbol:   class FilterChain
+  location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[23,33] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[11,37] cannot find symbol
+  symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[10,2] cannot find symbol
+  symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[16,31] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[21,26] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[21,54] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[21,91] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[35,30] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[35,58] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[35,95] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[42,34] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[42,62] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[42,99] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[49,29] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[49,57] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[49,94] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[57,27] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[57,55] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[57,92] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[67,32] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[67,60] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[67,97] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/ProfileService.java:[12,12] cannot find symbol
+  symbol:   class Student
+  location: class com.gosjsu.student.ProfileService
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/ProfileService.java:[37,41] cannot find symbol
+  symbol:   class Student
+  location: class com.gosjsu.student.ProfileService
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[11,35] cannot find symbol
+  symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[10,2] cannot find symbol
+  symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[16,31] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[22,26] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[22,54] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[22,91] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[38,27] cannot find symbol
+  symbol:   class HttpServletRequest
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[38,55] cannot find symbol
+  symbol:   class HttpServletResponse
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[38,92] cannot find symbol
+  symbol:   class ServletException
+  location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/CRUDService.java:[30,17] cannot find symbol
+  symbol:   class Student
+  location: class com.gosjsu.admin.CRUDService
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[7,26] package javax.servlet.http does not exist
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.789 s
+[INFO] Finished at: 2025-05-01T23:40:11-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project GoSJSU: Compilation failure: Compilation failure: 
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[8,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[12,35] cannot find symbol
+[ERROR]   symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[11,2] cannot find symbol
+[ERROR]   symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[15,27] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.auth.LoginServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[15,55] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.auth.LoginServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java:[15,92] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.auth.LoginServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DBConnection.java:[5,8] duplicate class: DBConnection
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/GradeService.java:[3,24] cannot access com.gosjsu.utils.DBConnection
+[ERROR]   bad source file: /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DBConnection.java
+[ERROR]     file does not contain class com.gosjsu.utils.DBConnection
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[4,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[5,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[8,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[16,37] cannot find symbol
+[ERROR]   symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[15,2] cannot find symbol
+[ERROR]   symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[20,26] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[20,54] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[20,91] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[32,27] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[32,55] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[32,92] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[42,34] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[42,62] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[42,99] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[46,31] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[46,59] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[46,96] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[50,30] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[50,58] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[70,30] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java:[70,58] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.faculty.FacultyServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[4,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[5,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[6,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[7,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[8,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[9,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[10,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[11,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[14,36] cannot find symbol
+[ERROR]   symbol: class Filter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[17,22] cannot find symbol
+[ERROR]   symbol:   class FilterConfig
+[ERROR]   location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[17,56] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[22,26] cannot find symbol
+[ERROR]   symbol:   class ServletRequest
+[ERROR]   location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[22,50] cannot find symbol
+[ERROR]   symbol:   class ServletResponse
+[ERROR]   location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[22,76] cannot find symbol
+[ERROR]   symbol:   class FilterChain
+[ERROR]   location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java:[23,33] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.auth.AuthFilter
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[11,37] cannot find symbol
+[ERROR]   symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[10,2] cannot find symbol
+[ERROR]   symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[16,31] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[21,26] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[21,54] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[21,91] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[35,30] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[35,58] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[35,95] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[42,34] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[42,62] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[42,99] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[49,29] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[49,57] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[49,94] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[57,27] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[57,55] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[57,92] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[67,32] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[67,60] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentServlet.java:[67,97] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.student.StudentServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/ProfileService.java:[12,12] cannot find symbol
+[ERROR]   symbol:   class Student
+[ERROR]   location: class com.gosjsu.student.ProfileService
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/ProfileService.java:[37,41] cannot find symbol
+[ERROR]   symbol:   class Student
+[ERROR]   location: class com.gosjsu.student.ProfileService
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[11,35] cannot find symbol
+[ERROR]   symbol: class HttpServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[10,2] cannot find symbol
+[ERROR]   symbol: class WebServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[16,31] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[22,26] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[22,54] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[22,91] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[38,27] cannot find symbol
+[ERROR]   symbol:   class HttpServletRequest
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[38,55] cannot find symbol
+[ERROR]   symbol:   class HttpServletResponse
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java:[38,92] cannot find symbol
+[ERROR]   symbol:   class ServletException
+[ERROR]   location: class com.gosjsu.admin.AdminServlet
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/CRUDService.java:[30,17] cannot find symbol
+[ERROR]   symbol:   class Student
+[ERROR]   location: class com.gosjsu.admin.CRUDService
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[3,21] package javax.servlet does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[4,32] package javax.servlet.annotation does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[5,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[6,26] package javax.servlet.http does not exist
+[ERROR] /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java:[7,26] package javax.servlet.http does not exist
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

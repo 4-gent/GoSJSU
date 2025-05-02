@@ -14,7 +14,7 @@ public class CRUDService {
     private Connection connection;
 
     public CRUDService() {
-        connection = DBConnection.getConnection();
+        // connection = DBConnection.getConnection();
     }
 
     public void createStudent(String firstName, String lastName, String email) throws SQLException {
@@ -27,19 +27,19 @@ public class CRUDService {
         }
     }
 
-    public List<Student> readStudents() throws SQLException {
-        List<Student> students = new ArrayList<>();
-        String sql = "SELECT * FROM students";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql);
-             ResultSet rs = pstmt.executeQuery()) {
-            while (rs.next()) {
-                Student student = new Student(rs.getInt("id"), rs.getString("first_name"), 
-                                              rs.getString("last_name"), rs.getString("email"));
-                students.add(student);
-            }
-        }
-        return students;
-    }
+    // public List<Student> readStudents() throws SQLException {
+    //     List<Student> students = new ArrayList<>();
+    //     String sql = "SELECT * FROM students";
+    //     try (PreparedStatement pstmt = connection.prepareStatement(sql);
+    //          ResultSet rs = pstmt.executeQuery()) {
+    //         while (rs.next()) {
+    //             Student student = new Student(rs.getInt("id"), rs.getString("first_name"), 
+    //                                           rs.getString("last_name"), rs.getString("email"));
+    //             students.add(student);
+    //         }
+    //     }
+    //     return students;
+    // }
 
     public void updateStudent(int id, String firstName, String lastName, String email) throws SQLException {
         String sql = "UPDATE students SET first_name = ?, last_name = ?, email = ? WHERE id = ?";
