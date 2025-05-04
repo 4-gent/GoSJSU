@@ -12,7 +12,11 @@ public class GradeService {
     private Connection connection;
 
     public GradeService() {
-        this.connection = DBConnection.getConnection();
+        try {
+            this.connection = DBConnection.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to initialize database connection", e);
+        }
     }
 
     public void assignGrade(String studentId, String courseId, String grade) throws SQLException {

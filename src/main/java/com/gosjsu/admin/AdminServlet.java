@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+import com.gosjsu.student.Student;
 
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
@@ -24,7 +27,12 @@ public class AdminServlet extends HttpServlet {
 
         if ("view".equals(action)) {
             // Logic to view records
-            request.setAttribute("students", crudService.getAllStudents());
+            try {
+                List<Student> students = crudService.getAllStudents();
+                request.setAttribute("students", students);
+            } catch (SQLException e) {
+                throw new ServletException(e);
+            }
             request.setAttribute("courses", crudService.getAllCourses());
             request.setAttribute("faculty", crudService.getAllFaculty());
             request.getRequestDispatcher("/WEB-INF/views/admin/crud.jsp").forward(request, response);
@@ -38,17 +46,14 @@ public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
-        switch (action) {
+        switch(action) {
             case "addStudent":
-                // Logic to add a student
                 crudService.addStudent(request);
                 break;
             case "updateStudent":
-                // Logic to update a student
                 crudService.updateStudent(request);
                 break;
             case "deleteStudent":
-                // Logic to delete a student
                 crudService.deleteStudent(request);
                 break;
             // Additional cases for courses and faculty
