@@ -17,7 +17,7 @@
         <p style="color: #718096; margin-top: 1rem;">Enter your credentials to access your account</p>
       </div>
 
-      <form action="${pageContext.request.contextPath}/student/dashboard" method="get">
+      <form id="studentLoginForm" onsubmit="return validateStudentLogin(event)" action="${pageContext.request.contextPath}/student/dashboard" method="get">
         <div class="input-group">
           <label for="studentId"><i class="fas fa-id-card"></i> Student ID</label>
           <input type="text" id="studentId" name="studentId" placeholder="Enter your student ID" required />
@@ -28,10 +28,44 @@
           <input type="password" id="password" name="password" placeholder="Enter your password" required />
         </div>
         
+        <!-- Alert message for invalid credentials -->
+        <div id="invalidCredentials" style="color: #e53e3e; margin-top: 10px; display: none;">
+          <i class="fas fa-exclamation-circle"></i> Invalid credentials. Please try again.
+        </div>
+        
         <button type="submit" class="submit-btn">
           <i class="fas fa-sign-in-alt"></i> Login
         </button>
       </form>
+      
+      <!-- 
+      ################################################################
+      # TEMPORARY HARDCODED AUTHENTICATION - WILL BE REPLACED WITH DB #
+      # Credentials: 123456789 / sjsu                                #
+      # This validation will be replaced with proper database auth    # 
+      # by MJ OR ALEX in the next development phase            #
+      ################################################################
+      -->
+      <script>
+        function validateStudentLogin(event) {
+          event.preventDefault();
+          
+          // Get form values
+          const studentId = document.getElementById('studentId').value;
+          const password = document.getElementById('password').value;
+          
+          // HARDCODED credentials - will be replaced with database validation
+          if (studentId === '123456789' && password === 'sjsu') {
+            // Set these values in the URL for demonstration purposes
+            window.location.href = "${pageContext.request.contextPath}/student/dashboard?studentId=" + studentId;
+            return false;
+          } else {
+            // Show error message
+            document.getElementById('invalidCredentials').style.display = 'block';
+            return false;
+          }
+        }
+      </script>
       
       <div style="text-align: center; margin-top: 2rem;">
         <a href="${pageContext.request.contextPath}/" style="color: #4776E6; text-decoration: none; 

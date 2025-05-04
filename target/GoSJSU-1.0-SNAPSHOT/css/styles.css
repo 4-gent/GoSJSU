@@ -1,8 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -17,9 +20,11 @@ h1 {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
-    overflow: hidden;
+    padding: 2rem;
+    flex: 1;
 }
 
 nav {
@@ -52,25 +57,36 @@ footer {
 
 .card {
     background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin: 20px 0;
-    padding: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .button {
     display: inline-block;
     font-size: 16px;
     color: #ffffff;
-    background: #35424a;
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .button:hover {
-    background: #45a049;
+    background: linear-gradient(90deg, #8E54E9 0%, #4776E6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .table {
@@ -93,4 +109,169 @@ footer {
 .responsive {
     max-width: 100%;
     height: auto;
+}
+
+/* Modern form styles */
+.form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 2rem auto;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #4776E6;
+    box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.1);
+    outline: none;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #3d68d0 0%, #7c48d0 100%);
+    transform: translateY(-2px);
+}
+
+/* Landing page styles */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.landing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.landing-header h1 {
+    font-size: 2.75rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.landing-header h1:after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 4px;
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+    bottom: -10px;
+    left: 35%;
+    border-radius: 2px;
+}
+
+.landing-header p {
+    font-size: 1.25rem;
+    color: #4a5568;
+}
+
+.landing-main {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.student-portal, .faculty-dashboard {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.student-portal:hover, .faculty-dashboard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(31, 38, 135, 0.2);
+}
+
+.student-portal h2, .faculty-dashboard h2 {
+    margin-top: 0;
+    color: #2d3748;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.student-portal h2:after, .faculty-dashboard h2:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #3d68d0 0%, #7c48d0 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
