@@ -1,4 +1,6 @@
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyDashboardServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentDashboardServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DBConnection.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java

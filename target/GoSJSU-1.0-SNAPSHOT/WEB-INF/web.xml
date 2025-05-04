@@ -14,24 +14,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>StudentServlet</servlet-name>
-        <servlet-class>com.gosjsu.student.StudentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>StudentServlet</servlet-name>
-        <url-pattern>/student/*</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>FacultyServlet</servlet-name>
-        <servlet-class>com.gosjsu.faculty.FacultyServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/*</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>AdminServlet</servlet-name>
         <servlet-class>com.gosjsu.admin.AdminServlet</servlet-class>
     </servlet>
@@ -55,11 +37,11 @@
     </filter>
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
-        <url-pattern>/student/*</url-pattern>
+        <url-pattern>/student/dashboard</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
-        <url-pattern>/faculty/*</url-pattern>
+        <url-pattern>/faculty/dashboard</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
@@ -71,7 +53,7 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>views/login.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>
