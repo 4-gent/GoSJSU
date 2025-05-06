@@ -2,7 +2,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
-         version="3.1">
+         version="3.1"
+         metadata-complete="false">
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -50,6 +51,18 @@
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
         <url-pattern>/report/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/student/profile</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/student/timetable</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/student/grades</url-pattern>
     </filter-mapping>
 
     <welcome-file-list>

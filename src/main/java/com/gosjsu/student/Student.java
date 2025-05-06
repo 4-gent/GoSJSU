@@ -1,13 +1,20 @@
 package com.gosjsu.student;
 
+import java.util.Date;
+
 public class Student {
     private int id;
+    private String studentId;
     private String firstName;
     private String lastName;
     private String email;
     private String major;
-    private int age;
-    private String contactInfo;
+    private String gender;
+    private Date dateOfBirth;
+    private String city;
+    private String postalAddress;
+    private String mobileNumber;
+    private String alternateMobileNumber;
 
     public Student() {}
 
@@ -17,6 +24,14 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
     public String getFirstName() {
@@ -50,21 +65,53 @@ public class Student {
     public void setMajor(String major) {
         this.major = major;
     }
-
-    public int getAge() {
-        return age;
+    
+    public String getGender() {
+        return gender;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public String getContactInfo() {
-        return contactInfo;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+    
+    public String getCity() {
+        return city;
     }
 
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+    public String getPostalAddress() {
+        return postalAddress;
+    }
+
+    public void setPostalAddress(String postalAddress) {
+        this.postalAddress = postalAddress;
+    }
+    
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+    
+    public String getAlternateMobileNumber() {
+        return alternateMobileNumber;
+    }
+
+    public void setAlternateMobileNumber(String alternateMobileNumber) {
+        this.alternateMobileNumber = alternateMobileNumber;
     }
 
     // Helper method to get full name

@@ -12,7 +12,7 @@ public class ProfileService {
 
     public Student getStudentProfile(String studentId) {
         Student student = null;
-        String query = "SELECT * FROM Students WHERE studentID = ?";
+        String query = "SELECT * FROM students WHERE student_id = ?";
         
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -22,13 +22,21 @@ public class ProfileService {
             
             if (resultSet.next()) {
                 student = new Student();
-                student.setId(resultSet.getInt("studentID"));
-                student.setFirstName(resultSet.getString("firstName"));
-                student.setLastName(resultSet.getString("lastName"));
+                student.setId(resultSet.getInt("id"));
+                student.setStudentId(resultSet.getString("student_id"));
+                student.setFirstName(resultSet.getString("first_name"));
+                student.setLastName(resultSet.getString("last_name"));
                 student.setEmail(resultSet.getString("email"));
                 student.setMajor(resultSet.getString("major"));
-                student.setAge(resultSet.getInt("age"));
-                student.setContactInfo(resultSet.getString("contactInfo"));
+                // Handle date of birth instead of age
+                if (resultSet.getDate("date_of_birth") != null) {
+                    student.setDateOfBirth(resultSet.getDate("date_of_birth"));
+                }
+                student.setGender(resultSet.getString("gender"));
+                student.setCity(resultSet.getString("city"));
+                student.setPostalAddress(resultSet.getString("postal_address"));
+                student.setMobileNumber(resultSet.getString("mobile_number"));
+                student.setAlternateMobileNumber(resultSet.getString("alternate_mobile_number"));
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error fetching student profile", e);
@@ -38,7 +46,9 @@ public class ProfileService {
     }
 
     public boolean updateStudentProfile(Student student) {
-        String query = "UPDATE Students SET firstName = ?, lastName = ?, email = ?, major = ?, age = ?, contactInfo = ? WHERE studentID = ?";
+        String query = "UPDATE students SET first_name = ?, last_name = ?, email = ?, major = ?, " +
+                       "gender = ?, date_of_birth = ?, city = ?, postal_address = ?, " +
+                       "mobile_number = ?, alternate_mobile_number = ? WHERE student_id = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
              
@@ -46,9 +56,14 @@ public class ProfileService {
             preparedStatement.setString(2, student.getLastName());
             preparedStatement.setString(3, student.getEmail());
             preparedStatement.setString(4, student.getMajor());
-            preparedStatement.setInt(5, student.getAge());
-            preparedStatement.setString(6, student.getContactInfo());
-            preparedStatement.setInt(7, student.getId());
+            preparedStatement.setString(5, student.getGender());
+            preparedStatement.setDate(6, student.getDateOfBirth() != null ? 
+                new java.sql.Date(student.getDateOfBirth().getTime()) : null);
+            preparedStatement.setString(7, student.getCity());
+            preparedStatement.setString(8, student.getPostalAddress());
+            preparedStatement.setString(9, student.getMobileNumber());
+            preparedStatement.setString(10, student.getAlternateMobileNumber());
+            preparedStatement.setString(11, student.getStudentId());
             
             int rowsUpdated = preparedStatement.executeUpdate();
             return rowsUpdated > 0;
@@ -79,9 +94,11 @@ public class ProfileService {
 
         switch (field) {
             case "firstName":
+            case "first_name":
                 student.setFirstName(value);
                 break;
             case "lastName":
+            case "last_name":
                 student.setLastName(value);
                 break;
             case "email":
@@ -90,11 +107,23 @@ public class ProfileService {
             case "major":
                 student.setMajor(value);
                 break;
-            case "age":
-                student.setAge(Integer.parseInt(value));
+            case "gender":
+                student.setGender(value);
                 break;
-            case "contactInfo":
-                student.setContactInfo(value);
+            case "city":
+                student.setCity(value);
+                break;
+            case "postalAddress":
+            case "postal_address":
+                student.setPostalAddress(value);
+                break;
+            case "mobileNumber":
+            case "mobile_number":
+                student.setMobileNumber(value);
+                break;
+            case "alternateMobileNumber":
+            case "alternate_mobile_number":
+                student.setAlternateMobileNumber(value);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid field: " + field);

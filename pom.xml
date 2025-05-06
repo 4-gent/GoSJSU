@@ -93,7 +93,11 @@
                 <version>2.2</version>
                 <configuration>
                     <path>/GoSJSU</path>
-                    <port>8081</port>
+                    <port>8083</port>
+                    <useTestClasspath>false</useTestClasspath>
+                    <contextReloadable>true</contextReloadable>
+                    <useSeparateTomcatClassLoader>true</useSeparateTomcatClassLoader>
+                    <tomcatUsers>src/main/tomcat/conf/tomcat-users.xml</tomcatUsers>
                 </configuration>
             </plugin>
         </plugins>

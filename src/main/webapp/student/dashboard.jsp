@@ -32,25 +32,25 @@
             </a>
           </li>
           <li class="nav-item" data-section="profile">
-            <a href="#" id="profileLink">
+            <a href="${pageContext.request.contextPath}/student/profile" id="profileLink">
               <i class="fas fa-user"></i>
               <span>Profile</span>
             </a>
           </li>
           <li class="nav-item" data-section="registration">
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/student/registration">
               <i class="fas fa-calendar-alt"></i>
               <span>Registration</span>
             </a>
           </li>
           <li class="nav-item" data-section="timetable">
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/student/timetable">
               <i class="fas fa-clock"></i>
               <span>Timetable</span>
             </a>
           </li>
           <li class="nav-item" data-section="grades">
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/student/grades">
               <i class="fas fa-graduation-cap"></i>
               <span>Grades</span>
             </a>
@@ -826,28 +826,14 @@
     document.addEventListener('DOMContentLoaded', function() {
       setCurrentDate();
       
-      // Ensure profile link works properly
-      document.getElementById('profileLink').onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent event bubbling
-        console.log('Profile link clicked (direct handler)');
-        document.getElementById('profileModal').style.display = 'block';
-        document.body.classList.add('modal-open');
-      };
+      // Profile link now navigates directly to profile.jsp
     });
     
     // Profile Modal
     const profileModal = document.getElementById('profileModal');
-    const profileLink = document.getElementById('profileLink');
     const closeProfileModal = document.querySelector('#profileModal .close-modal');
     
-    // Open modal when profile link is clicked
-    profileLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      console.log('Profile link clicked');
-      profileModal.style.display = 'block';
-      document.body.classList.add('modal-open');
-    });
+    // Profile link now navigates directly to profile.jsp
     
     // Close modal when X is clicked
     closeProfileModal.addEventListener('click', function() {
@@ -905,8 +891,8 @@
           return; // Logout is handled separately
         }
         
-        if (item.dataset.section === 'profile') {
-          return; // Profile is handled separately
+        if (item.dataset.section === "profile") { 
+          return; // Profile now shows a modal
         }
         
         e.preventDefault();

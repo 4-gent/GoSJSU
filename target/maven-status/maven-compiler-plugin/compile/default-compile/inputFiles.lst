@@ -1,11 +1,16 @@
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyDashboardServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/LoginServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/StudentDashboardServlet.java
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/RegistrationServlet.java
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/ProfileServlet.java
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/TimeTableServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DBConnection.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/auth/AuthFilter.java
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/DatabaseInitializer.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/report/ReportGenerator.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/GradeService.java
+/Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/student/GradesServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/utils/ValidationUtils.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/faculty/FacultyServlet.java
 /Users/nicktran/Desktop/GoSJSU-main/src/main/java/com/gosjsu/admin/AdminServlet.java
