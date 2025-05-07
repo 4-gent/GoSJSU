@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:12 -0700] "GET /GoSJSU/index.jsp HTTP/1.1" 200 1034 http-bio-8081-exec-1 404
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:14 -0700] "GET /GoSJSU/index.jsp HTTP/1.1" 200 1034 http-bio-8081-exec-3 1
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:15 -0700] "GET /GoSJSU/student/login.jsp HTTP/1.1" 200 490 http-bio-8081-exec-4 76
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:18 -0700] "GET /GoSJSU/faculty/login.jsp HTTP/1.1" 200 494 http-bio-8081-exec-5 42
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:39 -0700] "GET /GoSJSU/student/login.jsp HTTP/1.1" 200 490 http-bio-8081-exec-6 2
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:49 -0700] "GET /GoSJSU/faculty/login.jsp HTTP/1.1" 200 494 http-bio-8081-exec-7 4
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:50 -0700] "GET /GoSJSU/ HTTP/1.1" 200 1034 http-bio-8081-exec-8 2
+0:0:0:0:0:0:0:1 - - [04/May/2025:11:15:51 -0700] "GET /GoSJSU/faculty/login.jsp HTTP/1.1" 200 494 http-bio-8081-exec-9 2
