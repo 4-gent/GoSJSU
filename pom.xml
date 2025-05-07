@@ -93,7 +93,7 @@
                 <version>2.2</version>
                 <configuration>
                     <path>/GoSJSU</path>
-                    <port>8083</port>
+                    <port>8086</port>
                     <useTestClasspath>false</useTestClasspath>
                     <contextReloadable>true</contextReloadable>
                     <useSeparateTomcatClassLoader>true</useSeparateTomcatClassLoader>

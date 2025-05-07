@@ -230,6 +230,7 @@
             const loginForm = document.getElementById('loginForm');
             const studentIdLabel = document.querySelector('label[for="studentId"]');
             const studentIdInput = document.getElementById('studentId');
+            const loginError = document.getElementById('loginError');
             
             // Toggle between student and faculty login
             studentLogin.addEventListener('click', function() {
@@ -237,7 +238,9 @@
                 facultyLogin.classList.remove('active');
                 studentIdLabel.textContent = 'Student ID';
                 studentIdInput.placeholder = 'Enter your student ID';
+                studentIdInput.value = '123456789'; // Default student ID
                 loginForm.action = '${pageContext.request.contextPath}/student/dashboard';
+                loginError.textContent = 'Invalid credentials. Use Student ID: 123456789 and Password: sjsu';
             });
             
             facultyLogin.addEventListener('click', function() {
@@ -245,23 +248,43 @@
                 studentLogin.classList.remove('active');
                 studentIdLabel.textContent = 'Faculty ID';
                 studentIdInput.placeholder = 'Enter your faculty ID';
+                studentIdInput.value = '987654321'; // Default faculty ID
                 loginForm.action = '${pageContext.request.contextPath}/faculty/dashboard';
+                loginError.textContent = 'Invalid credentials. Use Faculty ID: 987654321 and Password: sjsu';
             });
             
             // For demo purposes - validate password
             loginForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Always prevent default form submission
                 const password = document.getElementById('password').value;
-                const studentId = document.getElementById('studentId').value;
+                const userId = document.getElementById('studentId').value;
+                const isFacultyActive = facultyLogin.classList.contains('active');
                 
-                if (password === "sjsu" && studentId === "123456789") {
-                    // Allow form submission to continue
-                    return true;
-                } else {
-                    // Show error message and prevent form submission
-                    e.preventDefault();
-                    document.getElementById('loginError').style.display = 'block';
-                    return false;
+                console.log("Login attempt: User ID=" + userId + ", Faculty mode=" + isFacultyActive);
+                
+                // TEMPORARY HARDCODED SOLUTION FOR DEMO
+                if (password === "sjsu") {
+                    if (isFacultyActive) {
+                        // Faculty login - direct navigation to dashboard (skip /faculty/)
+                        if (userId === "987654321") {
+                            console.log("Faculty login successful, redirecting to dashboard...");
+                            // IMPORTANT: Direct to dashboard to avoid redirect loop
+                            window.location.href = "${pageContext.request.contextPath}/faculty/dashboard?facultyId=" + userId;
+                            return;
+                        }
+                    } else {
+                        // Student login - direct navigation
+                        if (userId === "123456789") {
+                            console.log("Student login successful, redirecting...");
+                            window.location.href = "${pageContext.request.contextPath}/student/dashboard?studentId=" + userId;
+                            return;
+                        }
+                    }
                 }
+                
+                // Show error message
+                console.log("Login failed, showing error");
+                loginError.style.display = 'block';
             });
         });
     </script>

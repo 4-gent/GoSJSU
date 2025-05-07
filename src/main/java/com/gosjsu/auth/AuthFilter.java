@@ -23,47 +23,54 @@ public class AuthFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-
-        // Allow unauthenticated access to public login pages and initial dashboards
         String uri = httpRequest.getRequestURI();
-        if (uri.endsWith("/login") || uri.endsWith("/login.jsp") ||
-            uri.endsWith("/student/login.jsp") || uri.endsWith("/faculty/login.jsp") ||
-            uri.endsWith("/student/dashboard") || uri.endsWith("/faculty/dashboard") ||
-            uri.endsWith("/student/profile") || uri.endsWith("/student/profile.jsp") ||
-            uri.endsWith("/student/timetable") || uri.endsWith("/student/grades")) {
+        String ctx = httpRequest.getContextPath();
+
+        // Skip static resources so that CSS, JS, and images are served without authentication
+        if (uri.startsWith(ctx + "/css/") || uri.startsWith(ctx + "/js/") ||
+            uri.startsWith(ctx + "/images/") || uri.matches(".*\\.(css|js|png|jpg|jpeg|gif)$")) {
             chain.doFilter(request, response);
             return;
         }
 
-        HttpSession session = httpRequest.getSession(false);
-        String requestedURI = uri;
-        // Check if the user is logged in by looking for "username" in session
-        if (session == null || session.getAttribute("username") == null) {
-            // Redirect unauthenticated users back to their portal's login page or home
-            String ctx = httpRequest.getContextPath();
-            if (uri.startsWith(ctx + "/student/")) {
-                httpResponse.sendRedirect(ctx + "/student/login.jsp");
-            } else if (uri.startsWith(ctx + "/faculty/")) {
-                httpResponse.sendRedirect(ctx + "/faculty/login.jsp");
-            } else {
-                httpResponse.sendRedirect(ctx + "/index.jsp");
-            }
+        // Allow authenticated users (session-based) to access secured pages without requiring parameters
+        HttpSession existingSession = httpRequest.getSession(false);
+        if (existingSession != null && (existingSession.getAttribute("studentId") != null || existingSession.getAttribute("facultyId") != null)) {
+            chain.doFilter(request, response);
             return;
         }
-        // User is logged in, check role-based access
-        String userRole = (String) session.getAttribute("role");
-        if (!isAuthorized(userRole, requestedURI)) {
-            httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied");
-            return;
-        }
-        // User is authorized, continue with the request
-        chain.doFilter(request, response);
-    }
 
-    private boolean isAuthorized(String role, String uri) {
-        // Implement role-based access control logic here
-        // Example: return true if the user has access to the requested URI
-        return true; // Placeholder for actual authorization logic
+        // DEMO MODE: Skip all authentication for demo purposes
+        // Get student or faculty ID from request parameters
+        String studentId = httpRequest.getParameter("studentId");
+        String facultyId = httpRequest.getParameter("facultyId");
+        
+        // For demo, allow access directly as long as the ID parameter is present
+        if (studentId != null || facultyId != null) {
+            HttpSession session = httpRequest.getSession(true);
+            
+            if (studentId != null) {
+                session.setAttribute("studentId", studentId);
+                session.setAttribute("role", "student");
+            } else if (facultyId != null) {
+                session.setAttribute("facultyId", facultyId);
+                session.setAttribute("role", "faculty");
+            }
+            
+            // Always allow access in demo mode
+            chain.doFilter(request, response);
+            return;
+        }
+        
+        // For paths without ID, check if they are public
+        if (uri.endsWith("/login") || uri.endsWith("/login.jsp") ||
+            uri.endsWith("/index.jsp") || uri.equals(ctx + "/")) {
+            chain.doFilter(request, response);
+            return;
+        }
+        
+        // If no ID and not public page, redirect to home
+        httpResponse.sendRedirect(ctx + "/");
     }
 
     @Override
