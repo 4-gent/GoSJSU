@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test</title>
+    <link rel="stylesheet" href="css/modern-dashboard.css">
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+        }
+        .test-card {
+            background-color: var(--surface);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow);
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        .test-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        <h1>CSS Test Page</h1>
+        <p>This page tests if CSS files are being served correctly.</p>
+        <button class="test-btn">Test Button</button>
+    </div>
+    
+    <p>If you see a styled card with a blue/purple button, CSS is working.</p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Page loaded, testing CSS variables from modern-dashboard.css:");
+            const styles = getComputedStyle(document.documentElement);
+            console.log("--primary color:", styles.getPropertyValue('--primary').trim());
+            console.log("--radius-md:", styles.getPropertyValue('--radius-md').trim());
+        });
+    </script>
+</body>
+</html> 
