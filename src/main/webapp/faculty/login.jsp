@@ -319,23 +319,23 @@
           <p>Enter your credentials to access your dashboard</p>
         </div>
         
-        <form id="facultyLoginForm" class="login-form">
+        <form id="facultyLoginForm" action="${pageContext.request.contextPath}/login" method="post">
+          <input type="hidden" name="role" value="faculty">
           <div class="form-group">
-            <label for="facultyId" class="form-label">Faculty ID</label>
-            <div class="form-input-icon">
-              <i class="fas fa-id-card"></i>
-              <input type="text" id="facultyId" name="facultyId" class="form-input" placeholder="Enter your faculty ID" value="987654321">
-            </div>
+              <label for="facultyId" class="form-label">Faculty ID</label>
+              <div class="form-input-icon">
+                  <i class="fas fa-id-card"></i>
+                  <input type="text" id="facultyId" name="username" class="form-input" placeholder="Enter your faculty ID" required>
+              </div>
           </div>
-          
           <div class="form-group">
-            <label for="password" class="form-label">Password</label>
-            <div class="form-input-icon">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" value="sjsu">
-            </div>
+              <label for="password" class="form-label">Password</label>
+              <div class="form-input-icon">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+              </div>
           </div>
-          
+          <button type="submit" class="login-btn">Login</button>
           <div class="form-options">
             <div class="form-checkbox">
               <input type="checkbox" id="rememberMe" name="rememberMe" checked>
@@ -343,18 +343,6 @@
             </div>
             <a href="#" class="form-link">Forgot password?</a>
           </div>
-          
-          <button type="submit" class="login-btn">Login</button>
-          
-          <div class="login-divider">or</div>
-          
-          <div class="alternate-login">
-            <button type="button" class="alternate-login-btn">
-              <i class="fas fa-shield-alt"></i>
-              <span>Login with SSO</span>
-            </button>
-          </div>
-          
           <div class="register-prompt">
             Need IT support? <a href="#" class="form-link">Contact Help Desk</a>
           </div>
@@ -362,32 +350,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const facultyLoginForm = document.getElementById('facultyLoginForm');
-      
-      facultyLoginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const facultyId = document.getElementById('facultyId').value;
-        const password = document.getElementById('password').value;
-        
-        // Simple validation
-        if (!facultyId || !password) {
-          alert('Please enter both faculty ID and password.');
-          return;
-        }
-        
-        // Check credentials (in a real app, this would be done server-side)
-        if (facultyId === '987654321' && password === 'sjsu') {
-          // Successful login - redirect to dashboard
-          window.location.href = '${pageContext.request.contextPath}/faculty/dashboard?facultyId=' + facultyId;
-        } else {
-          alert('Invalid credentials. Please try again.');
-        }
-      });
-    });
-  </script>
 </body>
 </html> 

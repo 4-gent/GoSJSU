@@ -7,18 +7,12 @@ CREATE TABLE Student (
   PRIMARY KEY (studentID)
 ) ENGINE=InnoDB;
 
-
-
-
 -- Courses
 CREATE TABLE Course (
   courseID    INT            AUTO_INCREMENT,
   name        VARCHAR(100)   NOT NULL,
   PRIMARY KEY (courseID)
 ) ENGINE=InnoDB;
-
-
-
 
 -- Faculty
 CREATE TABLE Faculty (
@@ -28,14 +22,11 @@ CREATE TABLE Faculty (
   PRIMARY KEY (employeeID)
 ) ENGINE=InnoDB;
 
-
-
-
 -- Enrollment: which students are in which courses
 CREATE TABLE Enrollment (
   studentID   INT            NOT NULL,
   courseID    INT            NOT NULL,
-  enrolledOn  DATE           DEFAULT CURRENT_DATE,
+  enrolledOn  TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (studentID, courseID),
   FOREIGN KEY (studentID) REFERENCES Student(studentID)
     ON UPDATE CASCADE
@@ -44,16 +35,13 @@ CREATE TABLE Enrollment (
     ON UPDATE CASCADE
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
-
-
-
 
 -- Grade reports per student–course
 CREATE TABLE Grade_Report (
   studentID   INT            NOT NULL,
   courseID    INT            NOT NULL,
   grade       VARCHAR(5)     NOT NULL,
-  reportedOn  DATE           DEFAULT CURRENT_DATE,
+  reportedOn  TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (studentID, courseID),
   FOREIGN KEY (studentID) REFERENCES Student(studentID)
     ON UPDATE CASCADE
@@ -63,15 +51,11 @@ CREATE TABLE Grade_Report (
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-
-
-
-
 -- Teaches: which faculty teach which courses
 CREATE TABLE Teaches (
   employeeID  INT            NOT NULL,
   courseID    INT            NOT NULL,
-  assignedOn  DATE           DEFAULT CURRENT_DATE,
+  assignedOn  TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (employeeID, courseID),
   FOREIGN KEY (employeeID) REFERENCES Faculty(employeeID)
     ON UPDATE CASCADE

@@ -1,5 +1,0 @@
-0:0:0:0:0:0:0:1 - - [02/May/2025:00:35:39 -0700] "GET /gosjsu/ HTTP/1.1" 404 - http-bio-8081-exec-1 0
-0:0:0:0:0:0:0:1 - - [02/May/2025:00:35:44 -0700] "GET /gosjsu/index.jsp HTTP/1.1" 404 - http-bio-8081-exec-3 0
-0:0:0:0:0:0:0:1 - - [02/May/2025:00:35:52 -0700] "GET /GoSJSU/index.jsp HTTP/1.1" 200 388 http-bio-8081-exec-4 315
-0:0:0:0:0:0:0:1 - - [02/May/2025:00:35:52 -0700] "GET /GoSJSU/css/styles.css HTTP/1.1" 200 1330 http-bio-8081-exec-5 2
-0:0:0:0:0:0:0:1 - - [02/May/2025:00:35:52 -0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8081-exec-6 0

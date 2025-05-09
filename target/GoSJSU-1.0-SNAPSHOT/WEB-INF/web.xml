@@ -67,35 +67,15 @@
         <servlet-name>ReportServlet</servlet-name>
         <url-pattern>/report/*</url-pattern>
     </servlet-mapping>
-
-    <!-- Faculty Servlet with specific URL patterns -->
+    
+    <!-- Grade Services -->
     <servlet>
-        <servlet-name>FacultyServlet</servlet-name>
-        <servlet-class>com.gosjsu.faculty.FacultyServlet</servlet-class>
+        <servlet-name>GradeServlet</servlet-name>
+        <servlet-class>com.gosjsu.grades.GradeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/dashboard</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/courses</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/rosters</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/grades</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/reports</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FacultyServlet</servlet-name>
-        <url-pattern>/faculty/profile</url-pattern>
+        <servlet-name>GradeServlet</servlet-name>
+        <url-pattern>/grades</url-pattern>
     </servlet-mapping>
     
     <!-- Filter for authentication -->

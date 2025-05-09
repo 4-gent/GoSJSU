@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.gosjsu.student.Student" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,24 +38,6 @@
               <span>Profile</span>
             </a>
           </li>
-          <li class="nav-item" data-section="registration">
-            <a href="${pageContext.request.contextPath}/student/registration?studentId=${param.studentId}">
-              <i class="fas fa-calendar-alt"></i>
-              <span>Registration</span>
-            </a>
-          </li>
-          <li class="nav-item" data-section="timetable">
-            <a href="${pageContext.request.contextPath}/student/dashboard?studentId=${param.studentId}#timetable">
-              <i class="fas fa-clock"></i>
-              <span>Timetable</span>
-            </a>
-          </li>
-          <li class="nav-item" data-section="grades">
-            <a href="${pageContext.request.contextPath}/student/dashboard?studentId=${param.studentId}#grades">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Grades</span>
-            </a>
-          </li>
           <li class="nav-item" data-section="logout">
             <a href="#" id="logoutLink">
               <i class="fas fa-sign-out-alt"></i>
@@ -73,90 +56,50 @@
         <div class="date" id="currentDate"></div>
       </header>
       
-      <div class="profile-container" style="background-color: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow); padding: 0; overflow: hidden;">
-        <div class="profile-banner" style="position: relative; height: 200px; background: linear-gradient(135deg, #4338ca, #ec4899);">
-          <div class="profile-banner-img"></div>
-          <div class="profile-avatar-container" style="position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--surface); overflow: hidden; background-color: var(--surface);">
-            <img src="${pageContext.request.contextPath}/images/profile-avatar.jpg" alt="Profile avatar" class="profile-avatar" onerror="this.src='https://via.placeholder.com/120x120?text=MJ'" style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="profile-container">
+        <% 
+          Student student = (Student) request.getAttribute("student");
+          if (student != null) { 
+        %>
+        <div class="profile-banner">
+          <div class="profile-avatar-container">
+            <!-- <img src="${pageContext.request.contextPath}/images/profile-avatar.jpg" alt="Profile avatar" onerror="this.src='https://via.placeholder.com/120x120?text=Avatar'"> -->
           </div>
         </div>
-        
-        <div class="profile-info" style="text-align: center; padding: 3rem 2rem 2rem;">
-          <h2 class="profile-name" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem;">Marlon</h2>
-          <p class="profile-email" style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem;">marlon.burog@sjsu.edu</p>
-          <p class="profile-major" style="font-size: 1rem; font-weight: 500; color: var(--primary); margin-bottom: 1.5rem;">Software Engineer</p>
-          
-          <div class="profile-stats" style="display: flex; justify-content: center; gap: 4rem; margin-bottom: 2rem;">
-            <div class="stat-item" style="text-align: center;">
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">Year 3</h3>
-              <p style="font-size: 0.875rem; color: var(--text-secondary);">Current Year</p>
+
+        <div class="profile-info">
+          <h2 class="profile-name"><%= student.getFirstName() %> <%= student.getLastName() %></h2>
+          <p class="profile-email"><%= student.getEmail() %></p>
+          <p class="profile-major"><%= student.getMajor() %></p>
+
+          <div class="profile-stats">
+            <div class="stat-item">
+              <h3>Student ID</h3>
+              <p><%= student.getStudentId() %></p>
             </div>
-            <div class="stat-item" style="text-align: center;">
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">123456789</h3>
-              <p style="font-size: 0.875rem; color: var(--text-secondary);">Student ID</p>
-            </div>
-          </div>
-          
-          <div class="profile-section" style="background-color: var(--profile-section-bg, #f8fafc); border: 1px solid var(--profile-section-border, #e2e8f0); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem; text-align: left;">
-            <h3 class="section-title" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-primary); position: relative; padding-left: 1rem; border-left: 3px solid var(--primary);">Personal</h3>
-            <div class="profile-details" style="display: flex; flex-direction: column; gap: 1.5rem;">
-              <div class="detail-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">First name</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">MJ</p>
-                </div>
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Major</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">Software Engineer</p>
-                </div>
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Gender</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">Male</p>
-                </div>
-              </div>
-              <div class="detail-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Last Name</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">Marlon Burog</p>
-                </div>
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Date of Birth</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">01/01/2001</p>
-                </div>
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">City</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">San Jose</p>
-                </div>
-              </div>
+            <div class="stat-item">
+              <h3>City</h3>
+              <p><%= student.getCity() %></p>
             </div>
           </div>
-          
-          <div class="profile-section" style="background-color: var(--profile-section-bg, #f8fafc); border: 1px solid var(--profile-section-border, #e2e8f0); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem; text-align: left;">
-            <h3 class="section-title" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-primary); position: relative; padding-left: 1rem; border-left: 3px solid var(--primary);">Contact</h3>
-            <div class="profile-details" style="display: flex; flex-direction: column; gap: 1.5rem;">
-              <div class="detail-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Email</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">Marlon.Burog@sjsu.edu</p>
-                </div>
-                <div class="detail-item wide" style="display: flex; flex-direction: column; gap: 0.5rem; grid-column: span 2;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Postal Address</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">6969 Farpost CT<br>San Jose, CA 95121</p>
-                </div>
-              </div>
-              <div class="detail-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Mobile Number</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">0234567891</p>
-                </div>
-                <div class="detail-item" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Alternate Mobile Number</label>
-                  <p style="font-size: 0.875rem; font-weight: 500;">0509876543</p>
-                </div>
-              </div>
-            </div>
+
+          <div class="profile-section">
+            <h3>Contact</h3>
+            <p>Email: <%= student.getEmail() %></p>
+            <p>Mobile: <%= student.getMobileNumber() %></p>
+            <p>Alternate Mobile: <%= student.getAlternateMobileNumber() %></p>
+          </div>
+
+          <div class="profile-section">
+            <h3>Address</h3>
+            <p><%= student.getPostalAddress() %></p>
           </div>
         </div>
+        <% 
+          } else { 
+        %>
+        <p>Student profile not found.</p>
+        <% } %>
       </div>
     </main>
   </div>
