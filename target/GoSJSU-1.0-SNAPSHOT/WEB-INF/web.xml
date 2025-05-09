@@ -78,6 +78,16 @@
         <url-pattern>/grades</url-pattern>
     </servlet-mapping>
     
+    <!-- Student Grades -->
+    <servlet>
+        <servlet-name>StudentGradeServlet</servlet-name>
+        <servlet-class>com.gosjsu.student.GradeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentGradeServlet</servlet-name>
+        <url-pattern>/student/grades</url-pattern>
+    </servlet-mapping>
+    
     <!-- Student Dashboard -->
     <servlet>
         <servlet-name>StudentDashboardServlet</servlet-name>

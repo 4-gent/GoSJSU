@@ -8,6 +8,20 @@
     if (student != null) {
          session.setAttribute("student", student);
     }
+    
+    // Get the GPA from request attributes
+    Double gpa = (Double) request.getAttribute("gpa");
+    Double currentSemesterGPA = (Double) request.getAttribute("currentSemesterGPA");
+    Double previousSemesterGPA = (Double) request.getAttribute("previousSemesterGPA");
+    
+    if (gpa == null) gpa = 0.0;
+    if (currentSemesterGPA == null) currentSemesterGPA = 0.0;
+    if (previousSemesterGPA == null) previousSemesterGPA = 0.0;
+    
+    // Format GPA to show 2 decimal places
+    String formattedGPA = String.format("%.2f", gpa);
+    String formattedCurrentGPA = String.format("%.2f", currentSemesterGPA);
+    String formattedPrevGPA = String.format("%.2f", previousSemesterGPA);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +76,31 @@
       font-size: 0.8rem;
       font-weight: 500;
     }
+    
+    /* GPA Detail Styles */
+    .gpa-details {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+      font-size: 0.8rem;
+    }
+    
+    .gpa-semester {
+      color: #666;
+      margin-bottom: 3px;
+    }
+    
+    .gpa-value {
+      font-weight: 600;
+    }
+    
+    .gpa-current {
+      color: #4a6cf7;
+    }
+    
+    .gpa-previous {
+      color: #6b7280;
+    }
   </style>
 </head>
 <body>
@@ -98,6 +137,12 @@
               <span>Timetable</span>
             </a>
           </li>
+          <li class="nav-item" data-section="grades">
+            <a href="${pageContext.request.contextPath}/student/grades">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Grades</span>
+            </a>
+          </li>
           <li class="nav-item" data-section="profile">
             <a href="${pageContext.request.contextPath}/student/profile" id="profileLink">
               <i class="fas fa-user"></i>
@@ -132,7 +177,15 @@
           </div>
           <div class="card green">
             <h3>Current GPA</h3>
-            <div class="stat">3.75</div> <!-- Replace with dynamic GPA if available -->
+            <div class="stat"><%= formattedGPA %></div>
+            <div class="gpa-details">
+              <div class="gpa-semester">
+                <span class="gpa-current">Current Term: <%= formattedCurrentGPA %></span>
+              </div>
+              <div class="gpa-semester">
+                <span class="gpa-previous">Previous Term: <%= formattedPrevGPA %></span>
+              </div>
+            </div>
           </div>
           <div class="card purple">
             <h3>Registration Status</h3>
@@ -208,6 +261,9 @@
             <section class="grades-section">
               <div class="section-header">
                 <h2>Recent Grades</h2>
+                <a href="${pageContext.request.contextPath}/student/grades" style="color: #4a6cf7; font-size: 0.9rem; text-decoration: none;">
+                  View All <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-left: 3px;"></i>
+                </a>
               </div>
               
               <div class="grades-table">
@@ -216,15 +272,29 @@
                     <tr>
                       <th>Course</th>
                       <th>Grade</th>
-                      <th>Date</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <% List<StudentGradeDTO> grades = (List<StudentGradeDTO>) request.getAttribute("grades"); %>
-                    <% for (StudentGradeDTO grade : grades) { %>
+                    <% 
+                    List<StudentGradeDTO> grades = (List<StudentGradeDTO>) request.getAttribute("grades");
+                    if (grades != null && !grades.isEmpty()) {
+                      // Only show up to 3 recent grades on dashboard
+                      int count = 0;
+                      for (StudentGradeDTO grade : grades) {
+                        if (count < 3) {
+                    %>
                       <tr>
                         <td><%= grade.getCourseName() %></td>
-                        <td><%= grade.getGrade() %></td>
+                        <td><%= grade.getGrade() != null ? grade.getGrade() : "Not Graded" %></td>
+                      </tr>
+                    <% 
+                        }
+                        count++;
+                      }
+                    } else { 
+                    %>
+                      <tr>
+                        <td colspan="2" style="text-align: center;">No grades available</td>
                       </tr>
                     <% } %>
                   </tbody>

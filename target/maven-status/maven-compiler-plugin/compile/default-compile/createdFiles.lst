@@ -1,10 +1,10 @@
-com/gosjsu/grades/GradeServlet.class
 com/gosjsu/auth/AuthFilter.class
 com/gosjsu/enrollment/EnrollmentService.class
 com/gosjsu/student/StudentServlet.class
 com/gosjsu/admin/CRUDService.class
 com/gosjsu/student/Student.class
 com/gosjsu/faculty/FacultyProfileService.class
+com/gosjsu/student/GPACalculator.class
 com/gosjsu/student/ProfileService.class
 com/gosjsu/shared/Grade.class
 com/gosjsu/TestServlet.class
@@ -26,6 +26,7 @@ com/gosjsu/shared/StudentGradeDTO.class
 com/gosjsu/faculty/FacultyGradeService.class
 com/gosjsu/faculty/RostersServlet.class
 com/gosjsu/student/Course.class
+com/gosjsu/student/GradeServlet.class
 com/gosjsu/student/StudentDashboardServlet.class
 com/gosjsu/utils/DBConnection.class
 com/gosjsu/student/RegistrationServlet.class

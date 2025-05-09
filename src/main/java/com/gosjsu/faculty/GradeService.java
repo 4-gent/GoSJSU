@@ -14,20 +14,15 @@ import java.util.List;
 
 public class GradeService {
 
-    private Connection connection;
-
     public GradeService() {
-        try {
-            this.connection = DBConnection.getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to initialize database connection", e);
-        }
+        // No longer storing connection as instance variable
     }
 
     public void assignGrade(String studentId, String courseId, String grade) throws SQLException {
         String query = "INSERT INTO grade_report (studentID, courseID, grade) VALUES (?, ?, ?) " +
                     "ON DUPLICATE KEY UPDATE grade = ?";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, studentId);
             preparedStatement.setString(2, courseId);
             preparedStatement.setString(3, grade);
@@ -38,7 +33,8 @@ public class GradeService {
 
     public void updateGrade(String studentId, String courseId, String newGrade) throws SQLException {
         String query = "UPDATE grade_report SET grade = ? WHERE studentID = ? AND courseID = ?";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, newGrade);
             preparedStatement.setString(2, studentId);
             preparedStatement.setString(3, courseId);
@@ -54,7 +50,8 @@ public class GradeService {
                        "JOIN course c ON g.courseID = c.courseID " +
                        "WHERE g.courseID = ?";
         
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, courseId);
             ResultSet resultSet = preparedStatement.executeQuery();
             
@@ -74,11 +71,13 @@ public class GradeService {
 
     public List<Grade> getGradesForStudent(String studentId) throws SQLException {
         List<Grade> grades = new ArrayList<>();
-        String query = "SELECT courseID, grade, reportedOn " +
-                       "FROM grade_report " +
-                       "WHERE studentID = ?";
+        String query = "SELECT g.courseID, g.grade, g.reportedOn, g.semester, c.name as courseName " +
+                       "FROM grade_report g " +
+                       "JOIN course c ON g.courseID = c.courseID " +
+                       "WHERE g.studentID = ?";
         
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, studentId);
             ResultSet resultSet = preparedStatement.executeQuery();
             
@@ -87,11 +86,14 @@ public class GradeService {
                 grade.setCourseId(resultSet.getString("courseID"));
                 grade.setGrade(resultSet.getString("grade"));
                 grade.setReportedOn(resultSet.getTimestamp("reportedOn"));
+                grade.setCourseName(resultSet.getString("courseName"));
+                grade.setSemester(resultSet.getString("semester"));
                 grades.add(grade);
             }
         }
         return grades;
     }
+    
     public List<StudentGradeDTO> getGradesForFacultyCourse(String facultyId, String courseId) throws SQLException {
         List<StudentGradeDTO> grades = new ArrayList<>();
         String query = "SELECT s.studentID, s.student_id as studentNumber, s.firstName, s.lastName, c.name as courseName, g.grade " +
@@ -119,6 +121,8 @@ public class GradeService {
 
                 System.out.println("Added faculty course grade: " + grade.getStudentId() + " - " + grade.getFirstName() + " " + grade.getLastName());
             }
+            
+            // Debug output
             for (StudentGradeDTO grade : grades) {
                 System.out.println("Student ID: " + grade.getStudentId());
                 System.out.println("First Name: " + grade.getFirstName());
@@ -130,6 +134,7 @@ public class GradeService {
         }
         return grades;
     }
+    
     public List<Course> getCoursesForFaculty(String employeeId) throws SQLException {
         List<Course> courses = new ArrayList<>();
         String query = "SELECT c.courseID, c.name " +
@@ -137,7 +142,8 @@ public class GradeService {
                     "JOIN course c ON t.courseID = c.courseID " +
                     "WHERE t.employeeID = ?";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, employeeId);
             ResultSet resultSet = preparedStatement.executeQuery();
 

@@ -8,6 +8,7 @@ public class Grade {
     private String grade;
     private Date reportedOn;
     private String courseName; // Name of the course
+    private String semester; // Semester (e.g. "Fall 2025")
 
     public Grade() {
     }
@@ -57,5 +58,13 @@ public class Grade {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+    
+    public String getSemester() {
+        return semester;
+    }
+    
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 }
