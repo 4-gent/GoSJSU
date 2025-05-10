@@ -292,7 +292,7 @@
         Invalid credentials. Please try again.
       </div>
       <% } %>
-      
+
       <form id="studentLoginForm" action="${pageContext.request.contextPath}/login" method="post">
         <input type="hidden" name="role" value="student">
         

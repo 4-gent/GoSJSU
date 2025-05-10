@@ -180,12 +180,12 @@
         <section class="grades-section">
           <div class="section-header">
             <h2>Grade Report</h2>
-          </div>
-          
+        </div>
+
           <% if (request.getAttribute("errorMessage") != null) { %>
           <div class="error-message" style="color: #e53935; background-color: #ffebee; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
             <i class="fas fa-exclamation-circle"></i> <%= request.getAttribute("errorMessage") %>
-          </div>
+        </div>
           <% } %>
           
           <div class="semester-filter">
@@ -194,9 +194,9 @@
               <option value="all">All Semesters</option>
               <option value="Spring 2025">Spring 2025</option>
               <option value="Fall 2025">Fall 2025</option>
-            </select>
-          </div>
-          
+              </select>
+            </div>
+            
           <div class="grades-table-container">
             <table class="grades-table">
               <thead>
@@ -265,7 +265,7 @@
           row.style.display = '';
         } else {
           row.style.display = 'none';
-        }
+      }
       });
     }
     

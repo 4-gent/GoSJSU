@@ -17,7 +17,7 @@ public class TimeTableServlet extends HttpServlet {
     // Current semester - must match EnrollmentServlet
     private static final String CURRENT_SEMESTER = "Fall 2025";
     private ProfileService profileService = new ProfileService();
-
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();

@@ -128,26 +128,26 @@
 </head>
 <body>
   <div class="dashboard-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <div class="logo">
-          <div class="logo-icon">
-            <div class="logo-square light"></div>
-            <div class="logo-square dark"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <div class="logo">
+              <div class="logo-icon">
+                <div class="logo-square light"></div>
+                <div class="logo-square dark"></div>
+              </div>
+              <h1>goSJSU</h1>
+            </div>
           </div>
-          <h1>goSJSU</h1>
-        </div>
-      </div>
       
-      <nav class="sidebar-nav">
-        <ul>
-          <li class="nav-item" data-section="dashboard">
-            <a href="${pageContext.request.contextPath}/faculty/dashboard">
-              <i class="fas fa-th-large"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
+          <nav class="sidebar-nav">
+            <ul>
+              <li class="nav-item" data-section="dashboard">
+                <a href="${pageContext.request.contextPath}/faculty/dashboard">
+                  <i class="fas fa-th-large"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
           <li class="nav-item active" data-section="grades">
             <a href="${pageContext.request.contextPath}/faculty/grades">
               <i class="fas fa-chart-bar"></i>
@@ -160,21 +160,21 @@
               <span>Class Rosters</span>
             </a>
           </li>
-          <li class="nav-item" data-section="profile">
-            <a href="${pageContext.request.contextPath}/faculty/profile">
-              <i class="fas fa-user"></i>
-              <span>Profile</span>
-            </a>
-          </li>
-          <li class="nav-item" data-section="logout">
-            <a href="${pageContext.request.contextPath}/logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <span>Logout</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+              <li class="nav-item" data-section="profile">
+                <a href="${pageContext.request.contextPath}/faculty/profile">
+                  <i class="fas fa-user"></i>
+                  <span>Profile</span>
+                </a>
+              </li>
+              <li class="nav-item" data-section="logout">
+                <a href="${pageContext.request.contextPath}/logout">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -183,7 +183,7 @@
         <h1>Grade Management</h1>
         <div class="date" id="currentDate"></div>
       </header>
-      
+
       <% if (request.getAttribute("errorMessage") != null) { %>
         <div class="alert alert-danger">
           <%= request.getAttribute("errorMessage") %>
@@ -217,7 +217,7 @@
                 <th>ID</th>
                 <th>Student Name</th>
                 <th>Grade</th>
-              </tr>
+            </tr>
             </thead>
             <tbody>
               <% 
@@ -232,8 +232,8 @@
                     <input type="text" class="grade-input" name="grade_<%= student.getStudentId() %>" 
                            value="<%= student.getGrade() != null ? student.getGrade() : "" %>" 
                            placeholder="e.g. A">
-                  </td>
-                </tr>
+                      </td>
+                  </tr>
               <% 
                   }
                 } else {
@@ -242,15 +242,15 @@
                   <td colspan="3" style="text-align: center;">No students found for this course.</td>
                 </tr>
               <% } %>
-            </tbody>
+          </tbody>
           </table>
-          
+
           <% if (studentGrades != null && !studentGrades.isEmpty()) { %>
             <div style="text-align: right; margin-top: 20px;">
               <button type="submit" class="submit-btn">Save Grades</button>
             </div>
           <% } %>
-        </form>
+          </form>
       <% } else { 
            // Display list of courses
       %>
@@ -293,7 +293,7 @@
               <p>You are not currently assigned to any courses for the current semester.</p>
             </div>
           <% } %>
-        </div>
+      </div>
       <% } %>
     </main>
   </div>

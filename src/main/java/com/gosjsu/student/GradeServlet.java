@@ -28,7 +28,7 @@ public class GradeServlet extends HttpServlet {
         // Get student ID from session
         Integer studentId = (Integer) session.getAttribute("studentId");
         String username = (String) session.getAttribute("username");
-        
+
         System.out.println("Student GradeServlet called with studentID: " + studentId);
         System.out.println("Student username from session: " + username);
         
@@ -50,9 +50,9 @@ public class GradeServlet extends HttpServlet {
         
         if (studentIdStr == null || studentIdStr.isEmpty()) {
             System.err.println("No student ID available!");
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Student ID is required");
-            return;
-        }
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Student ID is required");
+                    return;
+                }
         
         List<Grade> grades = new ArrayList<>();
         

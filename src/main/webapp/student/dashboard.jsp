@@ -302,6 +302,339 @@
               </div>
             </section>
           </div>
+          
+          <!-- Academic Calendar Section -->
+          <div class="right-column">
+            <section class="academic-calendar-section">
+              <div class="section-header">
+                <h2><i class="fas fa-calendar-alt"></i> Academic Calendar</h2>
+                <button onclick="toggleCalendarView()" class="calendar-toggle-btn">
+                  <span id="viewText">View All</span> <i class="fas fa-chevron-down" id="viewIcon"></i>
+                </button>
+              </div>
+              
+              <div id="calendarPreview">
+                <!-- Only show 5 upcoming events initially -->
+                <div class="calendar-container">
+                  <!-- January -->
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 1</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">New Year's Day</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 20</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Dr. Martin Luther King, Jr. Day</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 21</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Spring Semester Begins</div>
+                      <div class="event-description"><i class="fas fa-flag"></i> Official Start Date</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 21-22</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Pre-Instruction Activities</div>
+                      <div class="event-description"><i class="fas fa-chalkboard-teacher"></i> Faculty Orientation & Meetings</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 23</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">First Day of Instruction</div>
+                      <div class="event-description"><i class="fas fa-book-open"></i> Classes Begin</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="calendarFull" style="display: none;">
+                <!-- All calendar events -->
+                <div class="calendar-container">
+                  <!-- January -->
+                  <div class="month-divider">
+                    <span><i class="fas fa-calendar-week"></i> January 2025</span>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 1</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">New Year's Day</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 20</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Dr. Martin Luther King, Jr. Day</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 21</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Spring Semester Begins</div>
+                      <div class="event-description"><i class="fas fa-flag"></i> Official Start Date</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 21-22</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Pre-Instruction Activities</div>
+                      <div class="event-description"><i class="fas fa-chalkboard-teacher"></i> Faculty Orientation & Meetings</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jan 23</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">First Day of Instruction</div>
+                      <div class="event-description"><i class="fas fa-book-open"></i> Classes Begin</div>
+                    </div>
+                  </div>
+                  
+                  <!-- February -->
+                  <div class="month-divider">
+                    <span><i class="fas fa-calendar-week"></i> February 2025</span>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Feb 18</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Last Day to Drop Courses</div>
+                      <div class="event-description"><i class="fas fa-exclamation-circle"></i> Without Record Entry</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Feb 18</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Last Day to Add Courses & Register Late</div>
+                      <div class="event-description"><i class="fas fa-exclamation-circle"></i> Registration Deadline</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Feb 19</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Enrollment Census Date</div>
+                      <div class="event-description"><i class="fas fa-clipboard-list"></i> Official Count</div>
+                    </div>
+                  </div>
+                  
+                  <!-- March/April -->
+                  <div class="month-divider">
+                    <span><i class="fas fa-calendar-week"></i> March/April 2025</span>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Mar 31</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Cesar Chavez Day</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Mar 31 - Apr 4</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Spring Recess</div>
+                      <div class="event-description"><i class="fas fa-umbrella-beach"></i> No Classes</div>
+                    </div>
+                  </div>
+                  
+                  <!-- May -->
+                  <div class="month-divider">
+                    <span><i class="fas fa-calendar-week"></i> May 2025</span>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 12</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Last Day of Instruction</div>
+                      <div class="event-description"><i class="fas fa-book-open"></i> Last Day of Classes</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 13</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Study/Conference Day</div>
+                      <div class="event-description"><i class="fas fa-pen"></i> No Classes or Exams</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 14-16</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Final Examinations</div>
+                      <div class="event-description"><i class="fas fa-tasks"></i> Exam Period</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 19-20</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Final Examinations</div>
+                      <div class="event-description"><i class="fas fa-tasks"></i> Exam Period</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 21</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Final Examinations Make-Up Day</div>
+                      <div class="event-description"><i class="fas fa-redo"></i> For Approved Absences</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 22</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Grade Evaluation Day</div>
+                      <div class="event-description"><i class="fas fa-chart-bar"></i> For Faculty</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 23</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Grades Due From Faculty</div>
+                      <div class="event-description"><i class="fas fa-exclamation-circle"></i> Deadline: 11:59 PM</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 23</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">End of Academic Year</div>
+                      <div class="event-description"><i class="fas fa-flag-checkered"></i> End of Spring Semester</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 21-23</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Commencement</div>
+                      <div class="event-description"><i class="fas fa-graduation-cap"></i> Graduation Ceremonies</div>
+                    </div>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">May 26</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Memorial Day</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                  
+                  <div class="month-divider">
+                    <span><i class="fas fa-calendar-week"></i> June 2025</span>
+                  </div>
+                  
+                  <div class="event-item">
+                    <div class="event-date">
+                      <div class="date-chip">Jun 19</div>
+                      <div class="event-year">2025</div>
+                    </div>
+                    <div class="event-details">
+                      <div class="event-name">Juneteenth</div>
+                      <div class="event-description"><i class="fas fa-building"></i> Campus Closed</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </section>
     </main>
@@ -319,7 +652,207 @@
       const currentDate = new Date().toLocaleDateString('en-US', dateOptions);
       document.getElementById('currentDate').innerText = currentDate;
     }
+    
+    // Toggle between calendar preview and full view
+    function toggleCalendarView() {
+      const preview = document.getElementById('calendarPreview');
+      const full = document.getElementById('calendarFull');
+      const viewText = document.getElementById('viewText');
+      const viewIcon = document.getElementById('viewIcon');
+      
+      if (preview.style.display === 'none') {
+        preview.style.display = 'block';
+        full.style.display = 'none';
+        viewText.innerText = 'View All';
+        viewIcon.className = 'fas fa-chevron-down';
+      } else {
+        preview.style.display = 'none';
+        full.style.display = 'block';
+        viewText.innerText = 'View Less';
+        viewIcon.className = 'fas fa-chevron-up';
+      }
+    }
+    
     document.addEventListener('DOMContentLoaded', setCurrentDate);
   </script>
+  
+  <style>
+    /* Academic Calendar Styles */
+    .content-grid {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .left-column {
+      flex: 2;
+    }
+    
+    .right-column {
+      flex: 1;
+    }
+    
+    .academic-calendar-section {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    
+    .academic-calendar-section .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .academic-calendar-section .section-header h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .academic-calendar-section .section-header h2 i {
+      color: #4a6cf7;
+    }
+    
+    .calendar-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .calendar-toggle-btn {
+      background-color: #f0f4fd;
+      color: #4a6cf7;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .calendar-toggle-btn:hover {
+      background-color: #e0e8ff;
+    }
+    
+    .event-item {
+      display: flex;
+      padding: 0.75rem;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+      margin-bottom: 8px;
+    }
+    
+    .event-item:hover {
+      background-color: #f0f4fd;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .event-date {
+      min-width: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 16px;
+    }
+    
+    .date-chip {
+      background: linear-gradient(135deg, #4a6cf7, #5e85fb);
+      color: white;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(74, 108, 247, 0.2);
+      margin-bottom: 4px;
+      width: 80px;
+    }
+    
+    .event-year {
+      font-size: 0.75rem;
+      color: #666;
+      text-align: center;
+    }
+    
+    .event-details {
+      flex: 1;
+    }
+    
+    .event-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #333;
+      font-size: 0.95rem;
+    }
+    
+    .event-description {
+      font-size: 0.85rem;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .event-description i {
+      color: #4a6cf7;
+      font-size: 0.8rem;
+    }
+    
+    .month-divider {
+      margin: 10px 0;
+      padding: 6px 0;
+      font-weight: 600;
+      color: #555;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .month-divider span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .month-divider i {
+      color: #4a6cf7;
+    }
+    
+    @media (max-width: 768px) {
+      .content-grid {
+        flex-direction: column;
+      }
+      
+      .event-item {
+        flex-direction: column;
+      }
+      
+      .event-date {
+        margin-right: 0;
+        margin-bottom: 10px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .date-chip {
+        margin-bottom: 0;
+      }
+    }
+  </style>
 </body>
 </html>

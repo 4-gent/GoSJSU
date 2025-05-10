@@ -199,4 +199,36 @@ public class ProfileService {
 
         return courses;
     }
+
+    // Add overloaded methods that accept String parameters
+    
+    public Student getStudentProfile(String studentIdStr) {
+        try {
+            int studentId = Integer.parseInt(studentIdStr);
+            return getStudentProfile(studentId);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid student ID format: " + studentIdStr);
+            return null;
+        }
+    }
+    
+    public List<Course> getEnrollments(String studentIdStr) {
+        try {
+            int studentId = Integer.parseInt(studentIdStr);
+            return getEnrollments(studentId);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid student ID format: " + studentIdStr);
+            return new ArrayList<>();
+        }
+    }
+    
+    public List<StudentGradeDTO> getGrades(String studentIdStr) {
+        try {
+            int studentId = Integer.parseInt(studentIdStr);
+            return getGrades(studentId);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid student ID format: " + studentIdStr);
+            return new ArrayList<>();
+        }
+    }
 }

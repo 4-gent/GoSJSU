@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS students (
 INSERT INTO students (student_id, first_name, last_name, email, major, gender, date_of_birth, city, postal_address, mobile_number, alternate_mobile_number)
 SELECT '123456789', 'Marlon', 'Burog', 'marlon.burog@sjsu.edu', 'Software Engineer', 'Male', '2001-01-01', 'San Jose', '6969 Farpost CT, San Jose, CA 95121', '0234567891', '0509876543'
 FROM dual
-WHERE NOT EXISTS (SELECT 1 FROM students WHERE student_id = '123456789');
+WHERE NOT EXISTS (SELECT 1 FROM students WHERE student_id = '123456789'); 
 
 -- Sample data for GoSJSU system
 

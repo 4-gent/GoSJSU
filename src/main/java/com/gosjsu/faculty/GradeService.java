@@ -94,6 +94,10 @@ public class GradeService {
         return grades;
     }
     
+    public List<Grade> getGradesForStudent(int studentId) throws SQLException {
+        return getGradesForStudent(String.valueOf(studentId));
+    }
+    
     public List<StudentGradeDTO> getGradesForFacultyCourse(String facultyId, String courseId) throws SQLException {
         List<StudentGradeDTO> grades = new ArrayList<>();
         String query = "SELECT s.studentID, s.student_id as studentNumber, s.firstName, s.lastName, c.name as courseName, g.grade " +
@@ -155,5 +159,9 @@ public class GradeService {
             }
         }
         return courses;
+    }
+    
+    public List<Course> getCoursesForFaculty(int employeeId) throws SQLException {
+        return getCoursesForFaculty(String.valueOf(employeeId));
     }
 }

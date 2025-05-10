@@ -33,27 +33,18 @@ public class StudentDashboardServlet extends HttpServlet {
             return;
         }
 
-        // Use studentId if available, otherwise convert username to studentId
+        // Use studentId if available, otherwise use username
         String studentIdStr = (studentId != null) ? studentId.toString() : username;
         
-        // Convert the studentIdStr to an integer for use with ProfileService methods
-        int studentIdInt;
-        try {
-            studentIdInt = Integer.parseInt(studentIdStr);
-        } catch (NumberFormatException e) {
-            System.err.println("Invalid student ID format: " + studentIdStr);
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid student ID format");
-            return;
-        }
-        
-        Student student = profileService.getStudentProfile(studentIdInt);
+        // Use the overloaded methods that accept String parameters directly
+        Student student = profileService.getStudentProfile(studentIdStr);
         if (student == null) {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Student not found");
             return;
         }
 
-        List<Course> enrollments = profileService.getEnrollments(studentIdInt);
-        List<StudentGradeDTO> studentGrades = profileService.getGrades(studentIdInt);
+        List<Course> enrollments = profileService.getEnrollments(studentIdStr);
+        List<StudentGradeDTO> studentGrades = profileService.getGrades(studentIdStr);
         
         // Get complete grade information for GPA calculation
         List<Grade> allGrades = null;

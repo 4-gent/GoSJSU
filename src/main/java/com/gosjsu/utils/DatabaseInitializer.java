@@ -19,6 +19,9 @@ public class DatabaseInitializer implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("Initializing database...");
         try {
+            // Make sure MySQL driver is loaded
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
             // First, create the database if it doesn't exist
             createDatabaseIfNotExists();
             
@@ -67,8 +70,12 @@ public class DatabaseInitializer implements ServletContextListener {
             try (Connection connection = DriverManager.getConnection(url, user, password);
                  Statement statement = connection.createStatement()) {
                 
-                // Execute the schema script directly
-                statement.execute(schemaScript);
+                // Execute the schema script statement by statement to avoid issues
+                for (String sqlStatement : schemaScript.split(";")) {
+                    if (!sqlStatement.trim().isEmpty()) {
+                        statement.execute(sqlStatement);
+                    }
+                }
                 System.out.println("Schema script executed successfully");
             }
         } catch (Exception e) {
@@ -90,8 +97,18 @@ public class DatabaseInitializer implements ServletContextListener {
             try (Connection connection = DriverManager.getConnection(url, user, password);
                  Statement statement = connection.createStatement()) {
                 
-                // Execute the init script directly
-                statement.execute(initScript);
+                // Execute the init script statement by statement to avoid issues
+                for (String sqlStatement : initScript.split(";")) {
+                    if (!sqlStatement.trim().isEmpty()) {
+                        try {
+                            statement.execute(sqlStatement);
+                        } catch (SQLException e) {
+                            System.err.println("Error executing statement: " + sqlStatement);
+                            System.err.println("Error message: " + e.getMessage());
+                            // Continue with the next statement
+                        }
+                    }
+                }
                 System.out.println("Init script executed successfully");
             }
         } catch (Exception e) {

@@ -83,13 +83,13 @@
       border-radius: 4px;
       font-weight: 500;
       font-size: 0.85rem;
-    }
-    
+      }
+      
     .location {
       color: #666;
       font-size: 0.9rem;
-    }
-    
+      }
+      
     .no-classes {
       text-align: center;
       padding: 30px;
@@ -157,27 +157,27 @@
           <h1>Class Timetable</h1>
           <div class="date" id="currentDate"></div>
         </header>
-        
+
         <!-- Timetable Container -->
         <div class="timetable-container">
           <div class="timetable-header">
             <h2>Your Schedule</h2>
             <span class="semester-badge"><%= request.getAttribute("currentSemester") %></span>
-          </div>
-          
+              </div>
+              
           <% List<Course> enrollments = (List<Course>) request.getAttribute("enrollments"); %>
           
           <% if (enrollments != null && !enrollments.isEmpty()) { %>
             <table class="timetable-grid">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Days</th>
-                  <th>Time</th>
-                  <th>Location</th>
-                </tr>
-              </thead>
-              <tbody>
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Days</th>
+                <th>Time</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
                 <% for (Course course : enrollments) { 
                     // Generate simple schedule data for demonstration
                     String days = (course.getCourseId() % 2 == 0) ? "MW" : "TTh";
@@ -192,10 +192,10 @@
                     <td><span class="day-badge"><%= days %></span></td>
                     <td><%= time %></td>
                     <td class="location"><%= location %></td>
-                  </tr>
+              </tr>
                 <% } %>
-              </tbody>
-            </table>
+            </tbody>
+          </table>
           <% } else { %>
             <div class="no-classes">
               <p>You are not enrolled in any classes for the current semester.</p>

@@ -225,12 +225,12 @@
                           <td><%= student.getLastName() %>, <%= student.getFirstName() %></td>
                           <td><%= student.getEmail() %></td>
                           <td><%= request.getAttribute("grades" + student.getId()) != null ? request.getAttribute("grades" + student.getId()) : "Not Graded" %></td>
-                        </tr>
+                </tr>
                      <% } 
                    } else { %>
-                    <tr>
+                <tr>
                       <td colspan="4" style="text-align: center;">Select a course to view student roster</td>
-                    </tr>
+                </tr>
                 <% } %>
               </tbody>
             </table>
