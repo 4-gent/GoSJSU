@@ -2,7 +2,6 @@
 
 <div align="center">
   
-![GoSJSU Logo](https://www.sjsu.edu/communications/pics/SJSU-Primary-Stacked_Blue.png)
 
 [![Java](https://img.shields.io/badge/Java-11-orange.svg)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 [![Maven](https://img.shields.io/badge/Maven-3.8.1-blue.svg)](https://maven.apache.org/download.cgi)
@@ -166,17 +165,8 @@ Application-specific settings are located in:
 src/main/resources/config/application.properties
 ```
 
-## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Contact
-
-For questions and support, please contact [example@sjsu.edu](mailto:example@sjsu.edu).
 
 ---
 
